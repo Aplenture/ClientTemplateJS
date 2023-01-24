@@ -1,0 +1,398 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    font-family: Helvetica, Verdana;
+    color: #555;
+}
+
+.label {
+    white-space: nowrap
+}
+
+.body.view.controller {
+    height: 100%;
+}
+
+.view {
+    transition: all ease-in-out 150ms;
+}
+
+.info {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.05em;
+    padding: 1em;
+}
+
+.warning {
+    background-color: yellow;
+}
+
+.error {
+    background-color: red;
+}
+
+.body,
+.content,
+.root,
+.route.content.controller {
+    width: 100%;
+    height: 100%;
+}
+
+.route.content.controller>div {
+    padding: 1em;
+}
+
+.route.content.controller>div>div {
+    margin: 0 0 1em 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.scrollable {
+    overflow: auto;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+.selected {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.selectable {
+    cursor: pointer;
+}
+
+.disabled.button.controller.view {
+    background-color: darkgray;
+}
+
+.bar {
+    width: 100%;
+    background-color: white;
+}
+
+.title.bar {
+    border: 1px solid gray;
+}
+
+.bar>div {
+    width: min-content !important;
+    padding: .75em;
+}
+
+.menu {
+    width: min-content;
+    background-color: white;
+    height: 100%;
+    padding: 1em 0 0 0;
+}
+
+.menu>div {
+    padding: 0.25em 0.5em;
+}
+
+.menu>div:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.bar .title.label {
+    font-size: 1.1em;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+}
+
+.loading.overlay>div {
+    background-color: transparent;
+}
+
+.button {
+    width: min-content;
+    height: min-content;
+}
+
+.button.controller.view {
+    font-size: 1.1em;
+    background-color: rgb(1, 128, 212);
+    color: white;
+    padding: .75em;
+    user-select: none;
+    border-radius: .3em;
+    text-align: center;
+}
+
+.button.controller.view:hover {
+    background-color: rgb(0, 153, 255);
+    transform: scale(1.03, 1.03);
+}
+
+.button.controller.view:active {
+    background-color: rgb(1, 128, 212);
+    transform: scale(1, 1);
+}
+
+.button.controller.view.cancel {
+    background-color: rgb(212, 1, 1);
+}
+
+.button.controller.view.cancel:hover {
+    background-color: rgb(255, 0, 0);
+    transform: scale(1.03, 1.03);
+}
+
+.button.controller.view.cancel:active {
+    background-color: rgb(212, 1, 1);
+    transform: scale(1, 1);
+}
+
+.dropdown.input {
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex.top {
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.flex.bottom {
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.flex.left {
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.flex.right {
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.flex.horizontal {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.flex.vertical {
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.grid.container.view.controller {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* align-items: stretch; */
+    justify-content: space-around;
+}
+
+.grid.container.view.controller>div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* align-items: stretch; */
+    justify-content: space-around;
+}
+
+.grid.container.view.controller>div>div {
+    /* width: min-content; */
+    background-color: white;
+    border-radius: .5em;
+    padding: .75em;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #00000088;
+    z-index: 1000;
+}
+
+.overlay>div {
+    position: absolute;
+    height: min-content !important;
+    width: min-content !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: .75em;
+    border-radius: .5em;
+    background-color: white;
+    overflow: visible;
+}
+
+.overlay .title.bar {
+    border: none;
+}
+
+.overlay .button {
+    width: 100%;
+    padding: .75em 0 !important;
+}
+
+.input {
+    user-select: none;
+}
+
+.input.controller>.label {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: .8em;
+    padding: 0;
+    margin: 0;
+}
+
+.input.controller>.input.text {
+    background-color: #F4F4F4;
+    border: none;
+    font-size: 1.2em;
+    padding: .5em;
+    border-radius: .3em;
+}
+
+.input.controller>.input.text::placeholder {
+    color: rgb(175, 175, 175);
+    text-transform: lowercase;
+    /* font-style: italic; */
+}
+
+.switch {
+    user-select: none;
+}
+
+.switch label {
+    margin: .1em 0 0 0;
+    position: relative;
+    display: inline-block;
+    width: 4em;
+    height: 2.2em;
+}
+
+.switch label input {
+    display: none;
+}
+
+.switch label span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #812717;
+    display: block;
+    transition: all 250ms;
+    border-radius: 2.2em;
+}
+
+.switch label span span {
+    position: absolute;
+    content: "";
+    width: 1.7em;
+    border-radius: 100%;
+    display: block;
+    top: .25em;
+    left: .25em;
+    bottom: .25em;
+    background-color: white;
+    transition: all 250ms;
+}
+
+.switch input:checked+span {
+    background-color: #03a734;
+}
+
+.switch input:checked+span span {
+    transform: translate(1.8em, 0);
+}
+
+.table.alternatingBackgroundColor>div:not(:first-child):nth-child(odd) {
+    background-color: rgba(1, 128, 212, 0.1);
+}
+
+.table.view.controller {
+    display: table;
+    width: 100%;
+}
+
+.table.view.controller>div {
+    display: table-row;
+}
+
+.table.view.controller>div>div {
+    display: table-cell;
+    padding: 0 0.3em 0 0;
+}
+
+.table.view.controller>div:not(:first-child):not(.category):hover {
+    background-color: rgba(1, 128, 212, 0.3);
+}
+
+.table.view.controller>div:not(.cell):not(.category) {
+    font-weight: bold;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    /* text-align: center; */
+}
+
+.table .category>div {
+    font-weight: bold;
+    text-align: center;
+}
+
+.spinner {
+    display: inline-block;
+    width: 144px;
+    height: 144px;
+}
+
+.spinner:after {
+    content: " ";
+    display: block;
+    width: 128px;
+    height: 128px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 12px solid #3498db;
+    border-color: #3498db transparent #3498db transparent;
+    animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
