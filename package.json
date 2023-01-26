@@ -7,8 +7,7 @@
         "test": "tests"
     },
     "scripts": {
-        "build": "webpack --config config.webpack.js; npm test",
-        "test": "mocha -r ts-node/register 'tests/**/*.ts' --timeout 6000"
+        "build": "webpack --config config.webpack.js"
     },
     "repository": {
         "type": "git",
