@@ -20,7 +20,7 @@
     },
     "homepage": "https://github.com/Aplenture/<name>#readme",
     "dependencies": {
-        "clientjs": "github:Aplenture/ClientJS"
+        "aplenturejs": "github:Aplenture/AplentureJS"
     },
     "devDependencies": {
         "@types/chai": "^4.3.4",

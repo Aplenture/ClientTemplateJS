@@ -8,6 +8,7 @@ dist/
 config.json
 
 index.js
+index.js.LICENSE.txt
 
 !/**/.gitkeep
 !config.template.json

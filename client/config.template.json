@@ -1,3 +1,9 @@
 {
-    "url": "http://127.0.0.1:1339/"
+    "debug": false,
+    "defaultLanguage": "en",
+    "defaultRoute": "index",
+    "unauthorizedRoute": "login",
+    "hasAccessURL": "http://127.0.0.1:1339/hasAccess",
+    "loginURL": "http://127.0.0.1:1339/loginUser",
+    "logoutURL": "http://127.0.0.1:1339/logoutUser"
 }
