@@ -1,4 +1,17 @@
 {
+    "#_change_password": "Change Password",
+    "#_current_password": "Old Password",
+    "#_current_password_not_set": "Please type old password.",
+    "#_do_you_want_to_logout": "Are you shure to logout?",
+    "#_error": "Error",
     "#_login_invalid": "Wrong username or password.",
+    "#_logout": "Logout",
+    "#_new_password": "New Password",
+    "#_new_password_not_set": "Please type new password.",
+    "#_password": "Password",
+    "#_password_changed": "Password was changed.",
+    "#_repeat_password": "Repeat Password",
+    "#_repeat_password_not_matching": "Repeated password does not match the new password.",
+    "#_repeat_password_not_set": "Please repeat new password.",
     "#_wrong_old_password": "Wrong old password."
 }
