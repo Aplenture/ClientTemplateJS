@@ -1,6 +1,7 @@
 {
     "debug": false,
     "defaultLanguage": "en",
+    "localizationPath": "/localization/",
     "defaultRoute": "index",
     "unauthorizedRoute": "login",
     "hasAccessURL": "http://127.0.0.1:1339/hasAccess",

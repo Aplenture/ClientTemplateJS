@@ -10,14 +10,12 @@ body>.root {
     width: 100%;
     height: 100%;
     font-family: Helvetica, Verdana;
-    color: #555;
     overflow: hidden;
-    background-color: white;
 }
 
-.body.controller,
-.navigation.controller,
-.navigation.controller .container.controller {
+.body-view-controller,
+.navigation-view-controller,
+.navigation-view-controller .container-view-controller {
     position: absolute;
     top: 0;
     left: 0;
@@ -27,24 +25,22 @@ body>.root {
 
     display: flex;
     flex-direction: column;
-
-    background-color: white;
 }
 
-.navigation.controller {
+.navigation-view-controller {
     flex-direction: row;
 }
 
-.body.header.view {
+.body-title-bar {
     display: flex;
     flex-direction: column;
 
     width: 100%;
 }
 
-.body.controller .content.controller,
-.navigation.controller .content.controller,
-.navigation.controller .relative.controller {
+.body-view-controller .content.view-controller,
+.navigation-view-controller .content.view-controller,
+.navigation-view-controller .relative.view-controller {
     position: relative;
 
     width: calc(100% - 1em);
@@ -53,122 +49,95 @@ body>.root {
     padding: .5em;
 
     overflow: auto;
-
-    background-color: white;
 }
 
-.navigation.controller .tab.bar {
-    border-top: 1px solid black;
-}
-
-.bar {
+.bar-view {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
 
-    width: 100%;
-
-    background-color: white;
+    width: calc(100% - 1em) !important;
+    height: 2.3em !important;
+    padding: .5em;
 }
 
-.tab.bar {
+.tab-bar-view {
     justify-content: space-between;
+
+    width: 100% !important;
 
     padding: 0;
     margin: 0;
 }
 
-.tab.bar .item {
+.tab-bar-view .item {
     width: 100%;
     height: 100%;
-    color: #0180D4;
 }
 
-.title.bar {
+.tab-bar-view .item .label-view {
+    text-align: center;
+}
+
+.tab-bar-view .item .label-view,
+.menu-view .item .label-view {
+    width: 100%;
+    height: 100%;
+}
+
+.title-bar-view {
     justify-content: space-between;
 }
 
-.title.bar>.left {
+.title-bar-view>.left {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
 }
 
-.title.bar>.middle {
+.title-bar-view>.middle {
     display: flex;
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.title.bar>.right {
+.title-bar-view>.right {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
 }
 
-.menu {
-    width: 12em;
+.menu-view {
+    width: 10em;
     height: 100%;
 }
 
-.menu .item {
+.menu-view .item {
     width: 100%;
     padding: 0.5em;
-    color: #0180D4;
-}
-
-.tab.bar .item .label,
-.menu .item .label {
-    width: 100%;
-    height: 100%;
-}
-
-.tab.bar .item.disabled,
-.menu .item.disabled {
-    color: darkgray;
-}
-
-.tab.bar .item.selected,
-.menu .item.selected {
-    color: rgb(193, 230, 255);
-    background-color: #0180D4;
-}
-
-.tab.bar .item:hover,
-.menu .item:hover {
-    color: rgb(193, 230, 255);
-    background-color: rgb(0, 153, 255);
-}
-
-.tab.bar .item:active,
-.menu .item:active {
-    color: #0180D4;
-    background-color: rgb(0, 153, 255);
 }
 
 .view {
     transition: all ease-in-out 150ms;
 }
 
-.label {
+.label-view {
     display: table;
     /* white-space: nowrap; */
     width: 100%;
 }
 
-.label>span {
+.label-view>span {
     display: table-cell;
     vertical-align: middle;
 }
 
-.button {
+.button-view {
     min-width: 6em;
     max-width: min-content;
     min-height: 1.2em;
     font-size: 1.1em;
-    background-color: #0180D4;
-    color: white;
     padding: .5em;
     margin: .3em;
     user-select: none;
@@ -176,32 +145,25 @@ body>.root {
     text-align: center;
 }
 
-.button.disabled {
-    background-color: darkgray;
-}
 
-.button:hover {
-    background-color: rgb(0, 153, 255);
+.button-view:hover {
     transform: scale(1.03, 1.03);
 }
 
-.button:active {
-    background-color: #0180D4;
+.button-view:active {
     transform: scale(1, 1);
 }
 
-.button.red {
-    background-color: rgb(212, 1, 1);
-}
-
-.button.red:hover {
-    background-color: rgb(255, 0, 0);
+.button-view.red:hover {
     transform: scale(1.03, 1.03);
 }
 
-.button.red:active {
-    background-color: rgb(212, 1, 1);
+.button-view.red:active {
     transform: scale(1, 1);
+}
+
+.button-view .label-view span {
+    white-space: nowrap;
 }
 
 .hidden {
@@ -212,78 +174,27 @@ body>.root {
     pointer-events: none;
 }
 
-.selected {
-    background-color: rgba(0, 0, 0, 0.08);
-}
-
 .clickable {
     cursor: pointer !important;
 }
 
-.bar {
-    width: calc(100% - 1em) !important;
-    height: 2.3em !important;
-    padding: .5em;
-}
-
-.title.bar .button {
+.title-bar-view .button-view {
     min-width: min-content !important;
     max-width: min-content !important;
     height: min-content !important;
-    background-color: transparent;
-    color: #0180D4;
     padding: .2em;
     margin: .1em;
     border-radius: 0;
     text-align: center;
 }
 
-.title.bar .button .label {
+.title-bar-view .button-view .label-view {
     width: calc(100% - .4em);
-    border: 1px solid #0180D4;
     border-radius: .3em;
     padding: .2em;
 }
 
-.title.bar .button.red .label {
-    border: 1px solid rgb(212, 1, 1);
-}
-
-.title.bar .button.disabled {
-    color: darkgray;
-    color: darkgray;
-}
-
-.title.bar .button.disabled .label {
-    border: 1px solid darkgray;
-}
-
-.title.bar .button:hover {
-    color: rgb(0, 153, 255);
-    background-color: transparent;
-}
-
-.title.bar .button:active {
-    color: #0180D4;
-    background-color: transparent;
-}
-
-.title.bar .button.red {
-    color: rgb(212, 1, 1);
-    background-color: transparent;
-}
-
-.title.bar .button.red:hover {
-    color: rgb(255, 0, 0);
-    background-color: transparent;
-}
-
-.title.bar .button.red:active {
-    color: rgb(212, 1, 1);
-    background-color: transparent;
-}
-
-.bar .title.label {
+.title-bar-view .title.label-view {
     font-size: 1.1em;
     font-weight: 700;
     text-transform: uppercase;
@@ -291,146 +202,74 @@ body>.root {
     height: 100%;
 }
 
-.title.bar {
-    border-bottom: 1px solid gray;
-}
-
-.title.bar>div {
+.title-bar-view>div {
     width: min-content;
 }
 
-.flex {
-    display: flex;
-}
-
-.flex.top {
-    flex-direction: column;
-    justify-content: flex-start;
-    height: 100%;
-}
-
-.flex.bottom {
-    flex-direction: column;
-    justify-content: flex-end;
-    height: 100%;
-}
-
-.flex.left {
-    flex-direction: row;
-    justify-content: flex-start;
-    width: 100%;
-}
-
-.flex.right {
-    flex-direction: row;
-    justify-content: flex-end;
-    width: 100%;
-}
-
-.flex.horizontal {
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.flex.vertical {
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-}
-
-.grid.container.view {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    /* align-items: stretch; */
-    justify-content: space-around;
-}
-
-.grid.container.view>div {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    /* align-items: stretch; */
-    justify-content: space-around;
-}
-
-.grid.container.view>div>div {
-    /* width: min-content; */
-    border-radius: .5em;
-    padding: .75em;
-}
-
-.popup {
+.popup-view-controller {
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    background-color: #00000088;
     z-index: 1000;
 }
 
-.popup>div {
+.popup-view-controller>div {
     position: absolute;
-    height: min-content !important;
-    width: min-content !important;
+    /* height: min-content !important;
+    width: min-content !important; */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: .75em;
     border-radius: .5em;
     overflow: auto;
-    background-color: white;
 }
 
-.popup>div>div {
+.popup-view-controller>div>div {
     position: relative !important;
 
     /* width: 100%;
     height: 100%;
 
     display: flex;
-    flex-direction: column;
-
-    background-color: white; */
+    flex-direction: column; */
 }
 
-.popup .title.bar {
+.popup-view-controller .title-bar-view {
     border: none;
 }
 
-.popup .message.view.controller {
+.popup-view-controller .message.view-controller {
     min-width: 15em;
 }
 
-.login.controller .button {
+.login-view-controller .button-view {
     min-width: calc(100% - 1.6em) !important;
     max-width: calc(100% - 1.6em) !important;
 }
 
-.titled.label {
+.titled-label-view {
     padding: .2em;
 }
 
-.titled.label>span {
+.titled-label-view>span {
     display: block;
     padding: .2em;
 }
 
-.text_field,
-.switch,
-.dropbox {
+.text-field-view,
+.switch-view,
+.dropbox-view {
     min-width: 15em;
     user-select: none;
 }
 
-.text_field>span,
-.switch>span,
-.dropbox>span,
-.titled.label>span:first-child {
+.text-field-view>span,
+.switch-view>span,
+.dropbox-view>span,
+.titled-label-view>span:first-child {
     display: block;
     font-weight: 700;
     text-transform: uppercase;
@@ -439,42 +278,39 @@ body>.root {
     margin: 0;
 }
 
-.text_field input,
-.switch input,
-.dropbox>select {
+.text-field-view input,
+.switch-view input,
+.dropbox-view>select {
     width: calc(100% - 1em);
-    background-color: #F4F4F4;
     border: none;
     font-size: 1.2em;
     padding: .5em;
     border-radius: .3em;
 }
 
-.dropbox>select {
+.dropbox-view>select {
     width: 100%;
-    background-color: #F4F4F4;
     border: none;
     font-size: 1.2em;
     padding: .5em;
     border-radius: .3em;
 }
 
-.text_field input::placeholder {
-    color: rgb(175, 175, 175);
+.text-field-view input::placeholder {
     text-transform: lowercase;
     /* font-style: italic; */
 }
 
-.switch {
+.switch-view {
     padding: 0 0 .5em 0;
 }
 
-.switch span {
+.switch-view span {
     display: inline-block;
     padding: 1.1em 0 0 0;
 }
 
-.switch label {
+.switch-view label {
     float: right;
     position: relative;
     /* display: inline-block; */
@@ -483,31 +319,26 @@ body>.root {
     margin: .2em;
 }
 
-.switch input {
+.switch-view input {
     display: none;
 }
 
-.switch input:checked+span {
-    background-color: #03a734;
-}
-
-.switch input:checked+span span {
+.switch-view input:checked+span span {
     transform: translate(1.8em, 0);
 }
 
-.switch>label>span {
+.switch-view>label>span {
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    background-color: #812717;
     display: block;
     transition: all 250ms;
     border-radius: 2.2em;
 }
 
-.switch>label>span>span {
+.switch-view>label>span>span {
     position: absolute;
     content: "";
     width: 1.7em;
@@ -516,63 +347,42 @@ body>.root {
     top: .25em;
     left: .25em;
     bottom: .25em;
-    background-color: white;
     transition: all 250ms;
 }
 
-.table:not(.controller).alternatingBackgroundColor>div:not(:first-child):nth-child(odd) {
-    background-color: rgba(1, 128, 212, 0.1);
-}
-
-.table:not(.controller) {
+.table-view {
     display: table;
     width: 100%;
     border-collapse: separate;
     border-spacing: .5em 0;
 }
 
-.table.controller>.title.label {
+.table-view-controller>.title.label-view {
     width: calc(100% - 3em);
 
     padding: .3em 1em;
     margin: 0 0 1em .5em;
-
-    color: white;
-    background-color: #0180D4;
 }
 
-.table:not(.controller)>div:first-child {
+.table-view>.header {
     width: calc(100% - 1em);
-
-    color: white;
-    background-color: #0180D4;
 }
 
-.table:not(.controller)>div {
+.table-view>div {
     display: table-row;
 }
 
-.table:not(.controller)>div>div {
+.table-view>div>div {
     display: table-cell;
     width: auto;
     padding: .3em 1em;
-    border-left: 1px solid #0180D4;
-    border-right: 1px solid #0180D4;
 }
 
-.table:not(.controller)>div:last-child>div {
-    border-bottom: 1px solid #0180D4;
-}
-
-.table:not(.controller) .cell span {
+.table-view .cell span {
     display: inline;
 }
 
-.table:not(.controller)>div:not(:first-child):not(.category):hover {
-    background-color: rgba(1, 128, 212, 0.3);
-}
-
-.table:not(.controller) .category>div {
+.table-view .category>div {
     text-align: center;
 }
 
@@ -589,8 +399,6 @@ body>.root {
     height: 128px;
     margin: 8px;
     border-radius: 50%;
-    border: 12px solid #3498db;
-    border-color: #3498db transparent #3498db transparent;
     animation: spin 1.2s linear infinite;
 }
 
@@ -605,21 +413,13 @@ body>.root {
 }
 
 @media (orientation: landscape) {
-    .navigation.controller .menu.navigation {
-        display: block;
-    }
-
-    .navigation.controller .tab.bar.navigation {
+    .navigation-view-controller .navigation-tab-bar {
         display: none;
     }
 }
 
 @media (orientation: portrait) {
-    .navigation.controller .menu.navigation {
+    .navigation-view-controller .navigation-menu-view {
         display: none;
-    }
-
-    .navigation.controller .tab.bar.navigation {
-        display: flex;
     }
 }
