@@ -5,6 +5,8 @@ export class IndexViewController extends ViewController {
 
     constructor(...classes: string[]) {
         super(...classes, "index-view-controller");
+
+        this.title = '#_title_index';
     }
 
     public async load(): Promise<void> {
