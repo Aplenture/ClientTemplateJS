@@ -1,10 +1,6 @@
-import { JSONRequest } from "aplenturejs/dist/client";
-import { Config } from "./models/config";
-import { App } from "./utils/app";
+import { Client } from "aplenturejs/dist/client";
+import { RootViewController } from "./viewControllers/rootViewController";
 
-(async function () {
-    const config = await new JSONRequest<void, Config>('/config.json').send();
-    const app = new App(config);
+const rootViewController = new RootViewController();
 
-    await app.init(config);
-})();
+Client.init(rootViewController);
