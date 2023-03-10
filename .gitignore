@@ -1,5 +1,7 @@
 node_modules/
 dist/
+debug/
+setup/
 
 .DS_Store
 
@@ -7,8 +9,7 @@ dist/
 
 config.json
 
-index.js
-index.js.LICENSE.txt
+index.js*
 
 !/**/.gitkeep
 !config.template.json

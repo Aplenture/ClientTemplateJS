@@ -148,6 +148,25 @@ body>.root {
     background-color: white;
 }
 
+.popup-view-controller .close {
+    border-color: #D40101;
+    background-color: #FFF;
+}
+
+.popup-view-controller .close::before,
+.popup-view-controller .close::after {
+    background-color: #D40101;
+}
+
+.popup-view-controller .close:hover {
+    border-color: #FF0000;
+}
+
+.popup-view-controller .close:hover::before,
+.popup-view-controller .close:hover::after {
+    background-color: #FF0000;
+}
+
 .text-field-view input,
 .switch-view input,
 .dropbox-view>select {
