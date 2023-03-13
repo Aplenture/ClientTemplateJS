@@ -1,7 +1,7 @@
 import { ViewController } from "aplenturejs/dist/client";
 
 export class IndexViewController extends ViewController {
-    public static route = 'index';
+    public static readonly route = 'index';
 
     constructor(...classes: string[]) {
         super(...classes, "index-view-controller");
