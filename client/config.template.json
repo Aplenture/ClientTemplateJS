@@ -1,10 +1,18 @@
 {
-    "debug": false,
+    "debug": true,
+    "loginEnabled": true,
     "defaultLanguage": "en",
     "localizationPath": "/localization/",
-    "defaultRoute": "index",
-    "unauthorizedRoute": "login",
-    "hasAccessURL": "http://127.0.0.1:1339/hasAccess",
-    "loginURL": "http://127.0.0.1:1339/loginUser",
-    "logoutURL": "http://127.0.0.1:1339/logoutUser"
+    "routes": {
+        "default": "challenges",
+        "unauthorized": "login"
+    },
+    "server": {
+        "enpoint": "http://127.0.0.1:1339/",
+        "api": {
+            "hasAccessAPI": "hasAccess",
+            "loginAPI": "loginUser",
+            "logoutAPI": "logoutUser"
+        }
+    }
 }
