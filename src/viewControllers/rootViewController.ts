@@ -1,4 +1,4 @@
-import { Router, ViewController } from "aplenturejs/dist/client";
+import { Route, Router, ViewController } from "aplenturejs/dist/client";
 import { IndexViewController } from "./indexViewController";
 
 export class RootViewController extends ViewController {
@@ -8,7 +8,7 @@ export class RootViewController extends ViewController {
         Router.onRouteChanged.on(() => this.unload());
         Router.onRouteChanged.on(() => this.removeAllChildren());
 
-        Router.addRoute(IndexViewController.route, () => this.appendChild(new IndexViewController()));
+        Router.addRoute(new Route(IndexViewController.route), () => this.appendChild(new IndexViewController()));
 
         Router.onRouteChanged.on(() => this.load());
     }
