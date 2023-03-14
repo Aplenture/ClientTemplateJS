@@ -4,15 +4,15 @@
     "defaultLanguage": "en",
     "localizationPath": "/localization/",
     "routes": {
-        "default": "challenges",
+        "default": "index",
         "unauthorized": "login"
     },
     "server": {
-        "enpoint": "http://127.0.0.1:1339/",
+        "endpoint": "http://127.0.0.1:1339/",
         "api": {
-            "hasAccessAPI": "hasAccess",
-            "loginAPI": "loginUser",
-            "logoutAPI": "logoutUser"
+            "hasAccess": "hasAccess",
+            "login": "loginUser",
+            "logout": "logoutUser"
         }
     }
 }
